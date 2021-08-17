@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Godot Wild Jam Game OST .mp3-7b7b4ac84a853ef3dcc534c1eaee55da.mp3str"
+
+[deps]
+
+source_file="res://Godot Wild Jam Game OST .mp3"
+dest_files=[ "res://.import/Godot Wild Jam Game OST .mp3-7b7b4ac84a853ef3dcc534c1eaee55da.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

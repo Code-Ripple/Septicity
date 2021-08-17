@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.973154, 1 )
+colors = PoolColorArray( 0.839216, 0.596078, 0.117647, 1, 0.960784, 0.231373, 0, 1, 0.74902, 0.756863, 0.227451, 1 )
+
+[node name="Particles2D" type="CPUParticles2D"]
+material = SubResource( 1 )
+emitting = false
+amount = 1000
+lifetime = 0.1
+one_shot = true
+explosiveness = 1.0
+randomness = 0.09
+emission_shape = 1
+emission_sphere_radius = 2.0
+direction = Vector2( 2.589, 0 )
+spread = 180.0
+initial_velocity = 500.83
+initial_velocity_random = 0.5
+color_ramp = SubResource( 2 )

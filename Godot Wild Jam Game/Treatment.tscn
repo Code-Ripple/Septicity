@@ -1,0 +1,158 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://data-latin.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://EdgeOfTheGalaxyRegular-OVEa6.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Treatment.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 27
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 26
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 17
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="CanvasItemMaterial" id=5]
+
+[node name="Treatment" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.5
+margin_right = -0.5
+rect_pivot_offset = Vector2( -456, -127 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color( 1, 1, 1, 0.776471 )
+margin_left = 140.119
+margin_top = 73.2621
+margin_right = 873.119
+margin_bottom = 520.262
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 381.742
+margin_top = 391.307
+margin_right = 566.742
+margin_bottom = 422.307
+rect_scale = Vector2( 1.16349, 1.49558 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_disabled = Color( 0.105882, 0.105882, 0.105882, 1 )
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Button2"]
+margin_right = 180.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( -361.328, -62.635 )
+custom_fonts/font = SubResource( 2 )
+text = "GET TREATMENT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Button2"]
+margin_left = 218.739
+margin_top = -75.3731
+margin_right = 423.739
+margin_bottom = 81.6269
+rect_pivot_offset = Vector2( -1517.31, -146.948 )
+custom_fonts/font = SubResource( 3 )
+text = "instructions:
+
+REMOVE 10 VIRUS 
+INFECTIONS AND 
+THEN FLIP THE SWITCH"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 364.811
+margin_top = 447.194
+margin_right = 622.811
+margin_bottom = 477.194
+rect_pivot_offset = Vector2( 122.952, 89.9376 )
+custom_fonts/font = SubResource( 4 )
+text = "virus infections REMOVED:"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 405.921
+margin_top = 470.415
+margin_right = 585.921
+margin_bottom = 502.415
+rect_pivot_offset = Vector2( 53.9393, 16 )
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckButton" type="CheckButton" parent="."]
+margin_left = 412.0
+margin_top = 275.26
+margin_right = 488.0
+margin_bottom = 315.26
+rect_scale = Vector2( 1.835, 1.56538 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="BackButton" type="Button" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+material = SubResource( 5 )
+margin_left = 153.878
+margin_top = 84.6326
+margin_right = 204.878
+margin_bottom = 131.633
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="BackButton"]
+margin_left = 2.12247
+margin_top = 5.86739
+margin_right = 51.1225
+margin_bottom = 49.8674
+rect_pivot_offset = Vector2( -1517.31, -146.948 )
+custom_fonts/font = SubResource( 3 )
+text = "X"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

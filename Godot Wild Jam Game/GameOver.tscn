@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://data-latin.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="CanvasItemMaterial" id=3]
+
+[sub_resource type="CanvasItemMaterial" id=4]
+
+[node name="GameOver" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+material = SubResource( 1 )
+margin_left = 55.2379
+margin_top = 92.5527
+margin_right = 953.238
+margin_bottom = 165.553
+custom_fonts/font = SubResource( 2 )
+text = "GAME OVER"
+align = 1
+
+[node name="Button" type="Button" parent="."]
+material = SubResource( 3 )
+margin_left = 415.132
+margin_top = 333.661
+margin_right = 602.132
+margin_bottom = 389.661
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color( 0.654902, 0.654902, 0.658824, 0.678431 )
+show_behind_parent = true
+light_mask = 655651
+material = SubResource( 4 )
+margin_left = 53.6505
+margin_top = 66.7937
+margin_right = 952.65
+margin_bottom = 533.794
+__meta__ = {
+"_edit_use_anchors_": false
+}

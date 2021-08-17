@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://HospitalFloor.png" type="Texture" id=3]
+[ext_resource path="res://Art/Table.png" type="Texture" id=4]
+[ext_resource path="res://HospitalScene.gd" type="Script" id=5]
+[ext_resource path="res://Art/Square.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 195.497, 61.6908 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 82.3018, 863.601 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 224.887, 20.8972 )
+
+[node name="Hospital World" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 654.118, 501.655 )
+scale = Vector2( 1.31308, 1.31308 )
+texture = ExtResource( 3 )
+
+[node name="Table" type="StaticBody2D" parent="."]
+position = Vector2( 31.1127, -230.517 )
+
+[node name="Sprite" type="Sprite" parent="Table"]
+position = Vector2( 469.21, 319.885 )
+scale = Vector2( 0.619043, 0.619043 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table"]
+position = Vector2( 469.22, 319.541 )
+shape = SubResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 679.628, 704.594 )
+rotation = -1.59899
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 621.939, -125.966 )
+rotation = -1.59899
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 1383.63, 262.691 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -245.853, 292 )
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 493.773, 615.899 )
+shape = SubResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="Area2D"]
+modulate = Color( 0.278431, 0.152941, 0.152941, 1 )
+position = Vector2( 500.059, 619.601 )
+scale = Vector2( 3.13316, 0.501992 )
+texture = ExtResource( 6 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
