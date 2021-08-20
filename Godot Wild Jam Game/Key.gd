@@ -1,6 +1,10 @@
 extends StaticBody2D
 
 var KeyNumber = 0
+onready var world = get_parent()
+
+
+
 
 func _on_Area2D_body_entered(body):
 	var Collision = get_node("Area2D")

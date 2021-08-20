@@ -3,18 +3,30 @@ extends Control
 var reached5 = false
 var virusInfections = 0
 var isInScene
+var checkedChecker = false
 
 func _process(delta):
 	var timer = get_node("Timer")
 	timer.wait_time = 0.26
+
 	
 	var button = get_node("Button2")
 	var checked = get_node("CheckButton")
 	var text = get_node("Label3")
 	var backButton = get_node("Button")
+	var world = get_parent().get_parent().get_parent()
 	var MainHospital = get_parent().get_node("Hospital Purchasing")
-	
 
+	if world.PlayerInfected == false:
+		checked.pressed = false
+	
+	print(checked.pressed)
+	
+	if checked.pressed == true:
+		checkedChecker = true
+		checked.pressed = true
+	if checked.pressed == false:
+		checkedChecker = false
 	
 	if visible == true:
 		isInScene = true
@@ -25,7 +37,7 @@ func _process(delta):
 		MainHospital.visible = true
 		visible = false
 			
-	if button.pressed == true:
+	if button.pressed == true and world.PlayerInfected == false:
 		virusInfections += 1
 
 	
@@ -38,6 +50,8 @@ func _process(delta):
 	
 	if virusInfections != 10:
 		checked.pressed = false
+		checkedChecker = false
+
 		
 	text.text = str(virusInfections)
 

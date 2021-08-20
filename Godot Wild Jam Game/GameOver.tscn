@@ -28,6 +28,9 @@ margin_bottom = 165.553
 custom_fonts/font = SubResource( 2 )
 text = "GAME OVER"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="."]
 material = SubResource( 3 )

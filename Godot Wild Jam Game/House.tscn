@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Art/Square.png" type="Texture" id=1]
+[ext_resource path="res://Art/House.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 47.7839, 5.06567 )
+
+[node name="House" type="StaticBody2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 54.3552, 85.1039, -209.347, 85.8531, -208.598, -162.866, 55.1043, -162.866, 57.3518, -129.154, 232.654, -126.907, 232.654, 49.8937, 177.696, 48.9608, 164.717, 23.004, 124.723, 23.2688, 106.977, 48.9608, 55.8535, 49.8937 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -84.1846, 92.0419 )
+shape = SubResource( 1 )
+
+[node name="ExitPosition" type="Sprite" parent="."]
+modulate = Color( 0.203922, 0.113725, 0.113725, 1 )
+position = Vector2( 144.08, 45.2248 )
+scale = Vector2( 0.0238738, 0.0319395 )
+texture = ExtResource( 1 )
