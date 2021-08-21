@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://data-latin.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://CabinetScreen.gd" type="Script" id=2]
@@ -17,6 +17,12 @@ font_data = ExtResource( 3 )
 [sub_resource type="DynamicFont" id=4]
 size = 61
 outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 25
+outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
@@ -81,3 +87,24 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Button" type="Button" parent="."]
+modulate = Color( 0.176471, 0.584314, 0.709804, 1 )
+margin_left = 421.951
+margin_top = 292.643
+margin_right = 592.951
+margin_bottom = 348.643
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 423.0
+margin_top = 291.0
+margin_right = 596.0
+margin_bottom = 352.0
+custom_fonts/font = SubResource( 5 )
+text = "DISTRIBUTE 
+VACCINES"
+align = 1
+valign = 1

@@ -1,0 +1,139 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://GreenVirus.png" type="Texture" id=1]
+[ext_resource path="res://MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://HospitalScene.tscn" type="PackedScene" id=3]
+[ext_resource path="res://EdgeOfTheGalaxyRegular-OVEa6.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://MenuFont.tres" type="DynamicFont" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ParentSprite" type="Sprite" parent="."]
+
+[node name="Control" type="Control" parent="ParentSprite"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hospital World" parent="ParentSprite/Control" instance=ExtResource( 3 )]
+position = Vector2( 30.004, -26.4939 )
+
+[node name="Sprite" parent="ParentSprite/Control/Hospital World" index="0"]
+position = Vector2( 404.982, 439.403 )
+
+[node name="Sprite" parent="ParentSprite/Control/Hospital World/Table" index="0"]
+position = Vector2( 638.023, 2.09827 )
+
+[node name="CollisionShape2D" parent="ParentSprite/Control/Hospital World/Table" index="1"]
+position = Vector2( 632.535, 15.3846 )
+
+[node name="CollisionShape2D4" parent="ParentSprite/Control/Hospital World/StaticBody2D" index="0"]
+position = Vector2( 1450.7, 1080.05 )
+
+[node name="CollisionShape2D3" parent="ParentSprite/Control/Hospital World/StaticBody2D" index="1"]
+position = Vector2( 642.177, -423.351 )
+
+[node name="CollisionShape2D2" parent="ParentSprite/Control/Hospital World/StaticBody2D" index="2"]
+position = Vector2( 1907.76, 212.294 )
+
+[node name="CollisionShape2D" parent="ParentSprite/Control/Hospital World/StaticBody2D" index="3"]
+position = Vector2( -941.329, 289.48 )
+
+[node name="CollisionShape2D" parent="ParentSprite/Control/Hospital World/Area2D" index="0"]
+position = Vector2( 1167.32, 1103.66 )
+
+[node name="Sprite" parent="ParentSprite/Control/Hospital World/Area2D" index="1"]
+position = Vector2( -389.254, 1151.2 )
+
+[node name="Label" type="Label" parent="ParentSprite/Control"]
+modulate = Color( 0.513726, 0.509804, 0.588235, 1 )
+margin_left = 172.325
+margin_top = 24.0234
+margin_right = 873.325
+margin_bottom = 136.023
+custom_fonts/font = SubResource( 1 )
+text = "INSERT GAME NAME HERE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="ParentSprite/Control"]
+modulate = Color( 0.87451, 1, 0, 1 )
+margin_left = 371.235
+margin_top = 318.319
+margin_right = 643.235
+margin_bottom = 388.319
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="About and Credits" type="Button" parent="ParentSprite/Control"]
+modulate = Color( 0.709804, 1, 0, 1 )
+margin_left = 367.871
+margin_top = 441.09
+margin_right = 639.871
+margin_bottom = 511.09
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="ParentSprite/Control"]
+modulate = Color( 1, 0.913725, 0, 1 )
+margin_left = 369.774
+margin_top = 197.0
+margin_right = 641.774
+margin_bottom = 267.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayLabel" type="Label" parent="ParentSprite/Control"]
+margin_left = 439.995
+margin_top = 193.0
+margin_right = 580.995
+margin_bottom = 271.0
+rect_pivot_offset = Vector2( 33.8863, 96.5793 )
+custom_fonts/font = ExtResource( 5 )
+text = "PLAY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="ParentSprite/Control"]
+margin_left = 425.0
+margin_top = 314.0
+margin_right = 602.0
+margin_bottom = 392.0
+custom_fonts/font = ExtResource( 5 )
+text = "ABOUT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="ParentSprite/Control"]
+margin_left = 435.357
+margin_top = 437.119
+margin_right = 587.357
+margin_bottom = 515.119
+custom_fonts/font = ExtResource( 5 )
+text = "QUIT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="ParentSprite"]
+position = Vector2( 981.838, 324.957 )
+rotation = 0.623185
+scale = Vector2( 0.24627, 0.246269 )
+texture = ExtResource( 1 )
+
+[editable path="ParentSprite/Control/Hospital World"]

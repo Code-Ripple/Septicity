@@ -21,11 +21,11 @@ func _process(delta):
 		world.Heart1.visible = true
 		world.Heart2.visible = true
 		world.Heart3.visible = true
-	if health == 2:
+	if health < 3 and health > 1:
 		world.Heart1.visible = false
 		world.Heart2.visible = true
 		world.Heart3.visible = true
-	if health == 1:
+	if health < 1:
 		world.Heart1.visible = false
 		world.Heart2.visible = false
 		world.Heart3.visible = true
@@ -41,7 +41,7 @@ func _process(delta):
 	look_at(get_global_mouse_position())
 	
 	if Input.is_action_just_pressed("shoot"):
-		if HospitalScreen.isInScene == false and world.GameOver == false:
+		if HospitalScreen.isInScene == false and world.GameOver == false and world.WonGame == false:
 			var bullet_instance = bullet.instance()
 			
 			bullet_instance.rotation_degrees = rotation_degrees
@@ -53,7 +53,7 @@ func _process(delta):
 func _physics_process(delta):
 	var motion = Vector2()
 	
-	if HospitalScreen.isInScene == false and world.GameOver == false:
+	if HospitalScreen.isInScene == false and world.GameOver == false and world.WonGame == false:
 		if Input.is_action_pressed("move_down"):
 			motion.y += 1
 		if Input.is_action_pressed("move_up"):

@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://data-latin.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 61
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="ImageTexture" id=4]
+
+[sub_resource type="DynamicFont" id=5]
+size = 22
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="VictoryScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.793701
+margin_right = 0.793701
+rect_pivot_offset = Vector2( -4684.9, -1071.72 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color( 1, 1, 1, 0.776471 )
+margin_left = 140.119
+margin_top = 73.2621
+margin_right = 873.119
+margin_bottom = 520.262
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+material = SubResource( 1 )
+margin_left = 141.0
+margin_top = 91.0
+margin_right = 872.0
+margin_bottom = 164.0
+custom_fonts/font = SubResource( 2 )
+text = "VICTORY!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+material = SubResource( 1 )
+margin_left = 140.729
+margin_top = 165.182
+margin_right = 871.729
+margin_bottom = 238.182
+custom_fonts/font = SubResource( 3 )
+text = "Congratulations! YOu have distributed the vaccines and stopped 
+the spread of the virus!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+modulate = Color( 0.972549, 0.227451, 0.592157, 1 )
+margin_left = 461.593
+margin_top = 325.443
+margin_right = 568.593
+margin_bottom = 365.443
+icon = SubResource( 4 )
+
+[node name="Label3" type="Label" parent="."]
+anchor_left = 0.000775099
+anchor_right = 0.000775099
+margin_left = 464.556
+margin_top = 324.206
+margin_right = 563.556
+margin_bottom = 364.206
+custom_fonts/font = SubResource( 5 )
+text = "Main MENU"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

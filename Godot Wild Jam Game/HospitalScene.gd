@@ -26,19 +26,14 @@ func _process(delta):
 
 func _on_Area2D_body_entered(body):
 	var HospitalPosition = get_parent().get_node("Hospital")
-	var hospitalPosition = HospitalPosition.get_position()
-	var HospitalY = hospitalPosition.y - 20
-	var positionToTeleport = Vector2(HospitalPosition.position.x, HospitalY)
-	HospitalPosition.hitColliderOnExit = true
 
-
+	
 	if HospitalPosition.HasEntered == true:
 		HospitalPosition.isInHospital = false
 	
 		
 	if body.name == "Player" or body.name == "PlayerCollider" or body.name == "PlayerArena":
-		body.position = hospitalPosition
-		hospitalPosition.y -= 10
+		body.position = HospitalPosition.position
 		cupboard.visible = false
 
 		

@@ -7,7 +7,7 @@ var checkedChecker = false
 
 func _process(delta):
 	var timer = get_node("Timer")
-	timer.wait_time = 0.26
+	timer.wait_time = 0.27
 
 	
 	var button = get_node("Button2")
@@ -33,14 +33,14 @@ func _process(delta):
 	if visible == false:
 		isInScene = false
 	
-	if backButton.pressed == true:
+	if backButton.pressed == true: 
 		MainHospital.visible = true
 		visible = false
 			
-	if button.pressed == true and world.PlayerInfected == false:
+	if button.pressed == true and world.PlayerInfected == true:
 		virusInfections += 1
 
-	
+
 	if virusInfections > 10:
 		virusInfections = 10
 

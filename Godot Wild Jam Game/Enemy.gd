@@ -6,6 +6,7 @@ var Health = 100
 var PlayerInfected = false
 
 var DarkerHeart = preload("res://Art/Darker Heart.png")
+
 var bullet = preload("res://Art/Bullet.png")
 var explosion = load("res://Particles.tscn").instance()
 onready var Player = get_parent().get_node("Player")
