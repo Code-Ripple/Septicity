@@ -6,10 +6,12 @@ var Health = 100
 var PlayerInfected = false
 
 var DarkerHeart = preload("res://Art/Darker Heart.png")
+onready var menu = get_parent().get_node("CanvasLayer3/ParentSprite/Control")
 
 var bullet = preload("res://Art/Bullet.png")
 var explosion = load("res://Particles.tscn").instance()
 onready var Player = get_parent().get_node("Player")
+onready var InfectText = get_parent().get_node("CanvasLayer/MarginContainer/Control/NeedTreatment")
 var bulletSpeed = 1000
 
 func _process(delta):
@@ -24,7 +26,7 @@ func _physics_process(delta):
 	var Player = world.get_node("Player")
 
 
-	if visible == true and Player.PlayerIsDead == false:
+	if visible == true and Player.PlayerIsDead == false and menu.ClickedPlay == true:
 		
 		position += (Player.position - position)/20
 		
@@ -41,6 +43,8 @@ func _on_Area2D_body_entered(body):
 		world.Heart3.texture = DarkerHeart
 		world.PlayerInfected = true
 		infectedScreen.visible = true
+		InfectText.visible = true
+		$Timer.autostart = true
 
 
 			
@@ -49,3 +53,7 @@ func _on_Area2D_body_entered(body):
 	
 
 	
+
+
+func _on_InfectTextTimer_timeout():
+	InfectText.visible = false
